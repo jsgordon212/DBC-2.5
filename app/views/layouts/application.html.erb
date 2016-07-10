@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jared's Blog App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header id="main_navigation" class="clearfix">
+		<%= link_to "Jared's Blog App", root_path, :class => "name" %>
+
+		<nav>
+					<%= link_to 'Latest Posts', posts_path %>
+			<% if login? %>
+					<%= link_to current_user.username, current_user %>
+					<%= link_to 'Sign out', logout_path %>
+			<% else %>
+					<%= link_to 'Sign in', login_path %>
+					<%= link_to 'Register', new_user_path %>
+			<% end %>
+		</nav>
+		</header>
+
+<%= yield %>
+
+</body>
+</html>
