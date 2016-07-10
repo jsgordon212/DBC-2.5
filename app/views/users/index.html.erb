@@ -1,3 +1,11 @@
-List of all the users
+<div class="wrapper wrapper_padding cleafix">
+			
+	<div class="col-2 home_content">
+		<h2>Find a blog</h2>
+		<hr>
+		<% @users.each do |user| %>
+			<p><a id="index_title" href="/users/<%= user.id %>"><%= user.username %></a></p>
+		<% end %>
+	</div>
 
-<div id="test"></div>
+</div>
