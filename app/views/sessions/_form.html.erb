@@ -1,4 +1,11 @@
   <%= form_tag '/login' do %>
+    <%if @errors %>
+    <ul>
+     <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
 
     <p>
       <%= label_tag :username %><br />
