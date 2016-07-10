@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
 	include UsersHelper
-	before_action :latest_posts
 
 	def index
 		@users = User.all
@@ -37,7 +36,4 @@ class UsersController < ApplicationController
   		params.require(:user).permit(:username, :email, :password)
 		end
 
-		def latest_posts
-  		@latest = Post.last(5).reverse
-  	end
 end

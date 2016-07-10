@@ -6,7 +6,8 @@
      <hr>
     </header>
     <div id="content">
-      <p><%= post.content.split[0..100].join(" ") %></p>
+      <p><%= post.content.split[0..50].join(" ") %><a style="color: black;" href="/posts/<%= post.id %>">
+      . . .read more</a></p>
     </div>
   </div>
 <% end %>

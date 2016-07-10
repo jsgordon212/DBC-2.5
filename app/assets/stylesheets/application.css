@@ -209,11 +209,14 @@ a {
 
 }
 
-a:hover{
+a:hover {
 	color: blue;
 }
 
-#errors{
+#errors {
 	color: red;
 }
 
+#post_options {
+	margin-bottom: 10px;
+}

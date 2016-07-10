@@ -10,7 +10,7 @@
       <p><%= @post.content %></p>
     </div>
     <% if current_user==@post.user %>
-        <nav id='post-options'>
+        <nav id='post_options'>
           <%= link_to 'Edit', edit_post_path(@post) %> |
           <%= link_to 'Delete ', @post,
                   method: :delete,

@@ -1,10 +1,9 @@
 class PostsController < ApplicationController
 
 	include PostsHelper
-	before_action :latest_posts
 
 	def index
-		@posts = Post.all
+		@latest = Post.last(5).reverse
 	end
 
 
@@ -62,10 +61,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content)
-  end
-
-  def latest_posts
-  	@latest = Post.last(5).reverse
   end
 
 end

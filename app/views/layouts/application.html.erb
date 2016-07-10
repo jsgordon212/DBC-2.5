@@ -9,10 +9,10 @@
 <body>
 
 	<header id="main_navigation" class="clearfix">
-		<%= link_to "Jared's Blog App", root_path, :class => "name" %>
+		<%= link_to "Jared's Blog App", posts_path, :class => "name" %>
 
 		<nav>
-					<%= link_to 'Latest Posts', posts_path %>
+					<%= link_to 'All Posters', users_path %>
 			<% if login? %>
 					<%= link_to current_user.username, current_user %>
 					<%= link_to 'Sign out', logout_path %>
