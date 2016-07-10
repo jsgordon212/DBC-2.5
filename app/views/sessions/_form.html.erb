@@ -1,10 +1,6 @@
   <%= form_tag '/login' do %>
     <%if @errors %>
-    <ul>
-     <% @errors.each do |error| %>
-        <li id="errors"><%= error %></li>
-      <% end %>
-      </ul>
+      <span id="errors"><%= @errors %></span>
     <% end %>
 
     <p>
