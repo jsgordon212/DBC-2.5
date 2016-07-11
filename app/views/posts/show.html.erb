@@ -2,7 +2,7 @@
 <div id="posts_show_content" class="skinny_wrapper wrapper_padding">
   <header>
   <% if @post %>
-     <p class="posted_by">posted by <%= @post.user.username %></p>
+     <p class="posted_by">posted by <a class="posted_by" href="/users/<%= @post.user.id %>"><%= @post.user.username %></a></p>
      <h1><%= @post.title %></h1>
      <hr>
     </header>
