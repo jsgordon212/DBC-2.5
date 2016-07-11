@@ -5,25 +5,6 @@
 <% end %>
 
 <% @user.posts.each do |post| %>
-  <div id="posts_show_content" class="skinny_wrapper wrapper_padding">
-    <header>
-     <p class="posted_by">posted by <%= @user.username %></p>
-     <h1><%= post.title %></h1>
-     <hr>
-    </header>
-  <div id="content">
-    <p><%= post.content %></p>
-   </div>
-    <% if current_user==post.user %>
-        <nav id='post_options'>
-          <%= link_to 'Edit', edit_post_path(post) %> |
-          <%= link_to 'Delete ', post,
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %>
-        </nav>
-    <% end %>
-    <hr>
-  <%= render 'disqus' %>
-  </div>
+  <%= render 'post'%>
 <% end %>
 
