@@ -7,12 +7,8 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		if authorized_user(current_user)
-			@user = User.find_by_id params[:id]
-			@posts = @user.posts
-		else
-			redirect_to '/'
-		end
+		@user = User.find_by_id params[:id]
+		@posts = @user.posts
 	end
 
 	def new

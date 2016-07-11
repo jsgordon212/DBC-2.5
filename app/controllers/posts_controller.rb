@@ -22,8 +22,12 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.find_by_id params[:id]
-		render 'edit'
+		if authorized_user(current_user)
+			@post = Post.find_by_id params[:id]
+			render 'edit'
+		else
+			redirect_to '/'
+		end
 	end
 
 
