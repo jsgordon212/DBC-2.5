@@ -22,8 +22,8 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		if authorized_user(current_user)
-			@post = Post.find_by_id params[:id]
+		@post = Post.find_by_id params[:id]
+		if @post.user == current_user
 			render 'edit'
 		else
 			redirect_to '/'
@@ -55,9 +55,12 @@ class PostsController < ApplicationController
 
 	def destroy
 		@post = Post.find_by_id params[:id]
-		@post.destroy
-
-		redirect_to current_user
+		if @post.user == current_user
+			@post.destroy
+			redirect_to current_user
+		else
+			redirect_to posts_path
+		end
 	end
 
 
