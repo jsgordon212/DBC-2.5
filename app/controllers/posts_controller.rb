@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	include PostsHelper
 
 	def index
-		@latest = Post.last(5).reverse
+		@latest = Post.all.reverse
 	end
 
 
