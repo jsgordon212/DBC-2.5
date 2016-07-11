@@ -1,7 +1,7 @@
 <% @latest.each do |post| %>
   <div id="posts_show_content" class="skinny_wrapper wrapper_padding">
    <header>
-     <p class="posted_by">posted by <a class="posted_by" href="/users/<%= post.user_id %>"><%= post.user.username %></a></p>
+     <p class="posted_by">posted by <%= post.user.username %></p>
      <h1><a id="index_title" href="/posts/<%= post.id %>"><%= post.title %></a></h1>
      <hr>
     </header>
