@@ -1,16 +1,15 @@
 <div id="posts_show_content" class="skinny_wrapper wrapper_padding">
   <header>
-  <% if @post %>
-     <p class="posted_by">posted by <%= @post.user.username %></p>
-     <h1><%= @post.title %></h1>
+     <p class="posted_by">posted by <%= post.user.username %></p>
+     <h1><%= post.title %></h1>
      <hr>
     </header>
     <div id="content">
-      <p><%= @post.content %></p>
+      <p><%= post.content %></p>
     </div>
-    <% if current_user==@post.user %>
+    <% if current_user==post.user %>
         <nav id='post_options'>
-          <%= link_to 'Edit', edit_post_path(@post) %> |
+          <%= link_to 'Edit', edit_post_path(post) %> |
           <%= link_to 'Delete ', @post,
                   method: :delete,
                   data: { confirm: 'Are you sure?' } %>
